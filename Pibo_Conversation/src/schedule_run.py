@@ -138,7 +138,7 @@ class RunSchedule():
             out = subprocess.check_output([f'python3 {self.path}/{self.act}'], shell=True)
             f.write(out)
             f.close()
-            drive_upload(folder, f'{today}.txt')
+            # drive_upload(folder, f'{today}.txt')
             
             
             if self.completion >= 11:
@@ -166,7 +166,7 @@ class RunSchedule():
             with open('/home/pi/pibo_errmsg.txt', 'wb') as f:
                 try:
                     f.write(f'[{time.ctime()}]\n{ex}')
-                    drive_upload('/home/pi', 'pibo_errmsg.txt')
+                    # drive_upload('/home/pi', 'pibo_errmsg.txt')
                 except:
                     pass
                 
