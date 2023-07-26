@@ -197,7 +197,6 @@ class Say():
         
         self.score = [0.0, 0.0, 0.0, 0.0]
         cwp.writerow([today, filename, self.score[0], self.score[1], self.score[2],self.score[3]])
-
         
         # 4. Paradise framework 기록
         turns = sum((self.reject[i] + 1) * 2 for i in range(len(self.reject)))  
@@ -212,7 +211,7 @@ class Say():
         cwc.writerow(['%Misrecognitions', ])
 
         # 5. 활동 완료 기록
-        gss.write_sheet(name=self.user_name, today=f'(1)_{today}', activities=filename)
+        gss.write_sheet(name=self.user_name, today=today, activities=filename)
         
 
 if __name__ == "__main__":
