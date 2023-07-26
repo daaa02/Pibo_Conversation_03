@@ -164,13 +164,12 @@ class RunSchedule():
         
         except Exception as ex:
             with open('/home/pi/pibo_errmsg.txt', 'wb') as f:
-                error = f'[{time.ctime()}]\n{ex}'
                 try:
-                    f.write(error.decode('utf-8'))
-                except Exception as e:
-                     f.write(error)
-                f.close()
-                drive_upload('/home/pi', 'pibo_errmsg')
+                    f.write(f'[{time.ctime()}]\n{ex}')
+                    drive_upload('/home/pi', 'pibo_errmsg.txt')
+                except:
+                    pass
+                
         
         
 
